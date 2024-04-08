@@ -1,0 +1,128 @@
+.master-container {
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/background.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0, 255, 174);
+    padding: 20px;
+    width: 80%; 
+    max-width: 400px;
+    animation: slideIn 1.5s ease;
+}
+
+
+.intro-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-container h2 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.intro-container p {
+    color: #777;
+    font-size: 16px;
+}
+
+.intro-container span {
+    color: blue;
+}
+
+.intro-container span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form label {
+    margin-bottom: 10px;
+}
+
+.container form input,
+.container form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.container form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.container form button:hover {
+    background-color: #0056b3;
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 700px) and (min-height: 350px) and (max-height: 400px) {
+    .container {
+        max-width: 70%;
+        height: 300px;
+        overflow-y: auto;
+        animation: none;
+    }
+
+    .container::-webkit-scrollbar{
+        display: none;
+    }
+
+    .container form button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        animation: none;
+    }
+
+    .container form button {
+        font-size: 16px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

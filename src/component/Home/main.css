@@ -1,0 +1,178 @@
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-right: 20px;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.home-container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    background: whitesmoke;
+}
+
+.home-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-container {
+    margin-top: 60px;
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    min-height: 90vh;
+    position: relative;
+    align-items: center;
+}
+
+ul{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.poster {
+    width: 100px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.details {
+    flex-direction: column;
+    padding: 5px;    
+}
+
+.vote {
+    font-weight: bold;
+    align-content: center;
+}
+.voting{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.vote span{
+    left: 45%;
+    position: relative;
+}
+
+.vote span p{
+    justify-content: center;
+    display: flex;
+}
+
+.watch-trailer-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.watch-trailer-button:hover {
+    background-color: #0056b3;
+}
+
+.underline {
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.company-info-container {
+    align-content: center;
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(254 230 19 / 60%), rgb(163 200 210));
+}
+
+.company-info-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid green;
+    padding: 20px;
+    max-width: 350px;
+    max-height: 250px;
+    margin: 0 auto;
+    animation: slideIn 1.5s ease;
+}
+
+.company-info-title {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.company-info-details {
+    margin-top: 20px;
+}
+
+.company-info-details p {
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 700px) and (min-height: 350px) and (max-height: 400px) {
+    .company-info-content {
+        max-width: 70%;
+        animation: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .company-info-content {
+        max-width: 80%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

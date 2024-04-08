@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Signup from "./component/Auth/Signup";
+import Login from "./component/Auth/Login";
+import Home from "./component/Home/Home";
+import CompanyInfo from "./component/Home/CompanyInfo";
+import Validate from "./component/Home/Validate";
 
 function App() {
+
+  const isLogged = JSON.parse(sessionStorage.getItem("isLog"));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          {isLogged === "true" ? <Route path="/company-info" element={<CompanyInfo />} /> : <Route path="/login" element={<Login />} />}
+          {isLogged === "true" ? <Route path="/home" element={<Home />} /> : <Route path="/login" element={<Login />} />}
+          <Route path="*" element={<Validate />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
