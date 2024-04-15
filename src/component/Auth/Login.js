@@ -22,8 +22,7 @@ function Login() {
         const userData = JSON.parse(localStorage.getItem('userData'));
         if (userData && userData.email === loginData.email && userData.password === loginData.password) {
             console.log('Login successful');
-            sessionStorage.setItem('isLog', JSON.stringify('true'));
-            setTimeout(() => { navigate('/home') }, 2000)
+            navigate('/home');
         } else {
             alert('Invalid Credentials');
         }

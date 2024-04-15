@@ -7,15 +7,14 @@ import Validate from "./component/Home/Validate";
 
 function App() {
 
-  const isLogged = JSON.parse(sessionStorage.getItem("isLog"));
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          {isLogged === "true" ? <Route path="/company-info" element={<CompanyInfo />} /> : <Route path="/login" element={<Login />} />}
-          {isLogged === "true" ? <Route path="/home" element={<Home />} /> : <Route path="/login" element={<Login />} />}
+          <Route path="/company-info" element={<CompanyInfo />} />
+          <Route path="/home" element={<Home />} />
           <Route path="*" element={<Validate />} />
         </Routes>
       </BrowserRouter>
